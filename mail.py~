@@ -2,7 +2,7 @@
 Mail类：
 类名：Mail
 功能：解析用户等级，向指定用户列表发送邮件
-属性：user dict 告警用户等级字典，id邮箱
+属性：user dict 告警用户等级字典，id，邮箱
 方法：
   	方法名：send_list
  		 	形参：level int 报警等级
