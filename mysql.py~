@@ -46,7 +46,7 @@ def connect(db, dbName):
           try:
               cxn = MySQLDb.connect(db=dbName)
           except _mysql_exceptions.OperationalError, e:
-              cxn = MySQLdb.connect(user='root')
+              cxn = MySQLdb.connect(user='root',passwd ='y123456r')
           try:
               cxn.query('DROP DATABASE %s' % dbName)
           except DB_EXC.OperationalError, e:
