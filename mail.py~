@@ -28,9 +28,9 @@ import email.utils
 class Mail:
     
     def __init__(self, user_dict, level_int,message_string):
-           self.server = "#设置服务器" 
-           self.user = "   #用户名  "    
-           self.passwd = " #口令"       
+           self.server = "smtp.mailgun.org" #设置服务器
+           self.user = "ru@raydina.me"     #用户名
+           self.passwd = "823264073"       #口令 
            self.dict = user_dict           #告警用户等级字典
            self.level = level_int          #报警等级
            self.info = message_string      #告警信息
@@ -59,7 +59,7 @@ class Mail:
                    print "Error: 无法发送邮件"
       
 if __name__ == '__main__':
-    data = {'1':'@qq.com','2':'zpan@linux.org'}
+    data = {'1':'823264073@qq.com','2':'zpan@xiyoulinux.org'}
     a= Mail(data,'1','warning')
     a.send_mail()   
  
