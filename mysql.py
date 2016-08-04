@@ -46,7 +46,7 @@ def connect(db, dbName):
           try:
               cxn = MySQLDb.connect(db=dbName)
           except _mysql_exceptions.OperationalError, e:
-              cxn = MySQLdb.connect(user='root')
+              cxn = MySQLdb.connect(user='root',passwd ='y123456r')
           try:
               cxn.query('DROP DATABASE %s' % dbName)
           except DB_EXC.OperationalError, e:
@@ -112,7 +112,7 @@ def insert(cur, db):
              cur.execute("INSERT INTO users VALUES(?, ?, ?)",
                      (who, uid, rrange(1,5)))
      elif db == 'mysql':
-         cur.executemay("INSERT INTO users VALUES(%s, %s, %s)",
+         cur.executemany("INSERT INTO users VALUES(%s, %s, %s)",
                  [(who, uid, rrange(1,5)) for who, uid, in randName()])
  
 getRC = lambda cur: cur.rowcount if hasattr(cur, 'rowcount') else -1
